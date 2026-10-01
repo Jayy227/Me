@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+
+  /* Custom Brutalist Scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFE600;
+    border-left: 3px solid #0D0D0D;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #0D0D0D;
+    border: 2px solid #FFE600;
+  }
+}
+
+@layer utilities {
+  .brutal-card {
+    @apply border-4 border-black bg-white shadow-brutal transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-brutal-lg;
+  }
+  .brutal-btn {
+    @apply border-3 border-black font-mono font-bold uppercase tracking-wider transition-all duration-150 active:translate-x-1 active:translate-y-1 active:shadow-none;
+  }
+}
